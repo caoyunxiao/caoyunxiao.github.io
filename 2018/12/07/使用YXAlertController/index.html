@@ -108,24 +108,24 @@
 
 
 
-  <meta name="description" content="123456789//这里有个坑，如果如果直接通过安全区域判断的话,在iOS12的非刘海屏设备，top都等于20。if (@available(iOS 11.0, *)) &amp;#123;    UIEdgeInsets safeArea = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets;&amp;#125;//所以采">
+  <meta name="description" content="YXAlertController是基于系统系统自带UIAlertController封装的一个库，由于在项目中经常会用到，就简单封装了一下，支持Pods是为了以后别的项目使用更方便。1pod &apos;YXAlertController&apos;, &apos;~&amp;gt; 1.0.3&apos; 主要有以下两个方法可供调用：1234567891011121314151617181920212223/** 默认提示选择框  @par">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS 适配 iPhoneXS Max，iPhoneXS，iPhoneXR">
-<meta property="og:url" content="http://yoursite.com/2018/12/07/测试/index.html">
+<meta property="og:title" content="使用YXAlertController">
+<meta property="og:url" content="http://yoursite.com/2018/12/07/使用YXAlertController/index.html">
 <meta property="og:site_name" content="Delevin">
-<meta property="og:description" content="123456789//这里有个坑，如果如果直接通过安全区域判断的话,在iOS12的非刘海屏设备，top都等于20。if (@available(iOS 11.0, *)) &amp;#123;    UIEdgeInsets safeArea = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets;&amp;#125;//所以采">
+<meta property="og:description" content="YXAlertController是基于系统系统自带UIAlertController封装的一个库，由于在项目中经常会用到，就简单封装了一下，支持Pods是为了以后别的项目使用更方便。1pod &apos;YXAlertController&apos;, &apos;~&amp;gt; 1.0.3&apos; 主要有以下两个方法可供调用：1234567891011121314151617181920212223/** 默认提示选择框  @par">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-07T07:49:09.437Z">
+<meta property="og:updated_time" content="2018-12-07T07:52:37.841Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS 适配 iPhoneXS Max，iPhoneXS，iPhoneXR">
-<meta name="twitter:description" content="123456789//这里有个坑，如果如果直接通过安全区域判断的话,在iOS12的非刘海屏设备，top都等于20。if (@available(iOS 11.0, *)) &amp;#123;    UIEdgeInsets safeArea = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets;&amp;#125;//所以采">
+<meta name="twitter:title" content="使用YXAlertController">
+<meta name="twitter:description" content="YXAlertController是基于系统系统自带UIAlertController封装的一个库，由于在项目中经常会用到，就简单封装了一下，支持Pods是为了以后别的项目使用更方便。1pod &apos;YXAlertController&apos;, &apos;~&amp;gt; 1.0.3&apos; 主要有以下两个方法可供调用：1234567891011121314151617181920212223/** 默认提示选择框  @par">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/07/测试/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/07/使用YXAlertController/">
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>iOS 适配 iPhoneXS Max，iPhoneXS，iPhoneXR | Delevin</title>
+  <title>使用YXAlertController | Delevin</title>
   
 
 
@@ -300,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/07/测试/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/07/使用YXAlertController/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹云霄">
@@ -317,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS 适配 iPhoneXS Max，iPhoneXS，iPhoneXR
+          <h1 class="post-title" itemprop="name headline">使用YXAlertController
               
             
           </h1>
@@ -342,7 +342,7 @@
                 
               
 
-              <time title="创建时间：2018-12-07 12:09:05 / 修改时间：15:49:09" itemprop="dateCreated datePublished" datetime="2018-12-07T12:09:05+08:00">2018-12-07</time>
+              <time title="创建时间：2018-12-07 15:52:34 / 修改时间：15:52:37" itemprop="dateCreated datePublished" datetime="2018-12-07T15:52:34+08:00">2018-12-07</time>
             
 
             
@@ -380,7 +380,10 @@
       
 
       
-        <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里有个坑，如果如果直接通过安全区域判断的话,在iOS12的非刘海屏设备，top都等于20。</span></span><br><span class="line"><span class="built_in">if</span> (@<span class="built_in">available</span>(iOS <span class="number">11.0</span>, *)) &#123;</span><br><span class="line">    UIEdgeInsets safeArea = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//所以采用另一种思路</span></span><br><span class="line"><span class="built_in">if</span> ([[UIApplication sharedApplication] statusBarFrame].<span class="built_in">size</span>.<span class="built_in">height</span> == <span class="number">44</span>) &#123; </span><br><span class="line">   <span class="comment">//iPhoneXS Max，iPhoneXS，iPhoneXR, iPhoneX</span></span><br><span class="line">   <span class="comment">//这样就都搞定啦</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>YXAlertController是基于系统系统自带UIAlertController封装的一个库，由于在项目中经常会用到，就简单封装了一下，支持Pods是为了以后别的项目使用更方便。<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">pod</span> <span class="string">'YXAlertController'</span>, <span class="string">'~&gt; 1.0.3'</span></span><br></pre></td></tr></table></figure></p>
+<p>主要有以下两个方法可供调用：<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> 默认提示选择框</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> title          提示标题</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> message        提示说明</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> style          风格</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> completed      确定回调</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> canceled       取消回调</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">extern <span class="keyword">void</span> ShowDefaultAlertView(NSString *title,NSString *message,UIAlertControllerStyle style,<span class="keyword">void</span>(^completed)(),<span class="keyword">void</span>(^canceled)());</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> 提示选择框</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> title          提示标题</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> message        提示说明</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> cancelTitle    取消按钮</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> DefaultTitle   确认按钮</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> style          风格</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> completed      确定回调</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> canceled       取消回调</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">extern <span class="keyword">void</span> ShowAlertView(NSString *title,NSString *message,NSString *cancelTitle,NSString *DefaultTitle,UIAlertControllerStyle style,<span class="keyword">void</span>(^completed)(),<span class="keyword">void</span>(^canceled)());</span><br></pre></td></tr></table></figure></p>
+<p>如何调用:<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"YXAlertController.h"</span></span></span><br><span class="line"></span><br><span class="line">    ShowDefaultAlertView(<span class="string">@"提示"</span>, <span class="string">@"你好，欢迎使用YXAlertController"</span>, <span class="built_in">UIAlertControllerStyleAlert</span>, <span class="literal">nil</span>, <span class="literal">nil</span>);</span><br><span class="line">    </span><br><span class="line">    ShowAlertView(<span class="string">@"提示"</span>, <span class="string">@"你好，欢迎使用YXAlertController"</span>, <span class="string">@"取消"</span>, <span class="string">@"确认"</span>, <span class="built_in">UIAlertControllerStyleAlert</span>, ^&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;, ^&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -410,14 +413,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/12/07/asdasdasd/" rel="next" title="iOS企业版App如何更新">
+                <i class="fa fa-chevron-left"></i> iOS企业版App如何更新
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/07/asdasdasd/" rel="prev" title="iOS企业版App如何更新">
-                iOS企业版App如何更新 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/07/如何上传框架到cocoapods/" rel="prev" title="如何上传框架到cocoapods">
+                如何上传框架到cocoapods <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

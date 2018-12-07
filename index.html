@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -84,7 +84,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '6.6.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -109,12 +109,12 @@
 
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Delevin">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:site_name" content="Delevin">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Delevin">
 
 
 
@@ -131,7 +131,7 @@
   };
 </script>
 
-  <title>Hexo</title>
+  <title>Delevin</title>
   
 
 
@@ -173,7 +173,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -192,7 +192,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Delevin</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -200,7 +200,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -228,7 +228,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
         
@@ -245,7 +245,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/07/测试/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/07/如何上传框架到cocoapods/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹云霄">
@@ -306,7 +306,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Delevin">
     </span>
 
     
@@ -317,7 +317,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/12/07/测试/" class="post-title-link" itemprop="http://yoursite.com/index.html">小灰灰，么么哒</a>
+                <a href="/2018/12/07/如何上传框架到cocoapods/" class="post-title-link" itemprop="http://yoursite.com/index.html">如何上传框架到cocoapods</a>
               
             
           </h1>
@@ -335,14 +335,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-12-07 12:09:05 / Modified: 13:29:18" itemprop="dateCreated datePublished" datetime="2018-12-07T12:09:05+08:00">2018-12-07</time>
+              <time title="创建时间：2018-12-07 15:54:07 / 修改时间：15:54:18" itemprop="dateCreated datePublished" datetime="2018-12-07T15:54:07+08:00">2018-12-07</time>
             
 
             
@@ -382,7 +382,479 @@
       
         
           
+            <p>此文章默认您已安装cocoapods</p>
+<p>1、先去github创建一个项目，格式如下</p>
+<p>2、git clone <a href="https://github.com/caoyunxiao/YXProgressHUDView" target="_blank" rel="noopener">https://github.com/caoyunxiao/YXProgressHUDView</a></p>
+<p>“<a href="https://github.com/caoyunxiao/YXProgressHUDView”换成自己的项目地址" target="_blank" rel="noopener">https://github.com/caoyunxiao/YXProgressHUDView”换成自己的项目地址</a></p>
+<p>3、把需要上传的框架加入工程，并push到github,并为此次提交打上tag，此tag和下文中podspec文件里source tag 必须一样</p>
+<p>git tag ‘1.0.0’</p>
+<p>git push –tags</p>
+<p>4、创建podspec文件</p>
+<p>pod spec create YXProgressHUDView</p>
+<p>5、修改podspec文件</p>
+<p>Pod::Spec.new do |s|</p>
+<p>s.name        = “YXProgressHUDView”</p>
+<p>s.version      = “1.0.0”</p>
+<p>s.summary      = “An iOS activity indicator view.”</p>
+<p>s.description  = &lt;&lt;-DESC</p>
+<p>YXProgressHUDView 基于MBProgressHUD的在封装，只为使用更简单</p>
+<p>DESC</p>
+<p>s.homepage    = “<a href="https://github.com/caoyunxiao/YXProgressHUDView&quot;" target="_blank" rel="noopener">https://github.com/caoyunxiao/YXProgressHUDView&quot;</a></p>
+<p>s.license      = { :type =&gt; ‘MIT’, :file =&gt; ‘LICENSE’ }</p>
+<p>s.author      = { ‘Matej caoyunxiao’ =&gt; <a href="mailto:&#39;chinacgcgcg@163.com" target="_blank" rel="noopener">&#39;chinacgcgcg@163.com</a>‘ }</p>
+<p>s.source      = { :git =&gt; “<a href="https://github.com/caoyunxiao/YXProgressHUDView.git&quot;" target="_blank" rel="noopener">https://github.com/caoyunxiao/YXProgressHUDView.git&quot;</a>, :tag =&gt; “1.0.0” }</p>
+<p>s.ios.deployment_target = ‘8.0’</p>
+<p>s.tvos.deployment_target = ‘9.0’</p>
+<p>s.source_files = “YXProgressHUDView/*.{h,m}”</p>
+<p>s.requires_arc = true</p>
+<p>s.dependency “MBProgressHUD”, “~&gt; 1.0.0”</p>
+<p>s.resources = “YXProgressHUDView/Resources/*.png”</p>
+<p>end</p>
+<p>6、注册cocoapods账号</p>
+<p>pod trunk register 邮箱地址 ‘用户名’ –description=’描述信息’</p>
+<p>输入如下命令可查看个人cocoapods账号信息，检查是否注册成功</p>
+<p>pod trunk me</p>
+<p>7、pod spec lint（检查podspec文件格式是否正确）后面加–verbose可打印详细信息</p>
+<p>出现下图时才表示正确无误</p>
+<p>8、上传到Cocoapods服务器</p>
+<p>pod trunk push YXProgressHUDView.podspec<br>出现下图就表示上传成功</p>
+<p>9、更新本地pod依赖库</p>
+<p>pod setup</p>
+<p>10、使用</p>
+<p>pod search YXProgressHUDView,如果搜索不到没关系</p>
+<p>直接在podfile文件里使用，如果能成功使用说明没问题。</p>
+<p>pod search 解决办法</p>
+<p>pod setup成功后会生成~/Library/Caches/CocoaPods/search_index.json文件。</p>
+<p>终端输入rm ~/Library/Caches/CocoaPods/search_index.json</p>
+<p>删除成功后再执行pod search</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/07/使用YXAlertController/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹云霄">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Delevin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/12/07/使用YXAlertController/" class="post-title-link" itemprop="http://yoursite.com/index.html">使用YXAlertController</a>
+              
             
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-07 15:52:34 / 修改时间：15:52:37" itemprop="dateCreated datePublished" datetime="2018-12-07T15:52:34+08:00">2018-12-07</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>YXAlertController是基于系统系统自带UIAlertController封装的一个库，由于在项目中经常会用到，就简单封装了一下，支持Pods是为了以后别的项目使用更方便。<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">pod</span> <span class="string">'YXAlertController'</span>, <span class="string">'~&gt; 1.0.3'</span></span><br></pre></td></tr></table></figure></p>
+<p>主要有以下两个方法可供调用：<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> 默认提示选择框</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> title          提示标题</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> message        提示说明</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> style          风格</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> completed      确定回调</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> canceled       取消回调</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">extern <span class="keyword">void</span> ShowDefaultAlertView(NSString *title,NSString *message,UIAlertControllerStyle style,<span class="keyword">void</span>(^completed)(),<span class="keyword">void</span>(^canceled)());</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> 提示选择框</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> title          提示标题</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> message        提示说明</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> cancelTitle    取消按钮</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> DefaultTitle   确认按钮</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> style          风格</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> completed      确定回调</span></span><br><span class="line"><span class="comment"> <span class="doctag">@param</span> canceled       取消回调</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">extern <span class="keyword">void</span> ShowAlertView(NSString *title,NSString *message,NSString *cancelTitle,NSString *DefaultTitle,UIAlertControllerStyle style,<span class="keyword">void</span>(^completed)(),<span class="keyword">void</span>(^canceled)());</span><br></pre></td></tr></table></figure></p>
+<p>如何调用:<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"YXAlertController.h"</span></span></span><br><span class="line"></span><br><span class="line">    ShowDefaultAlertView(<span class="string">@"提示"</span>, <span class="string">@"你好，欢迎使用YXAlertController"</span>, <span class="built_in">UIAlertControllerStyleAlert</span>, <span class="literal">nil</span>, <span class="literal">nil</span>);</span><br><span class="line">    </span><br><span class="line">    ShowAlertView(<span class="string">@"提示"</span>, <span class="string">@"你好，欢迎使用YXAlertController"</span>, <span class="string">@"取消"</span>, <span class="string">@"确认"</span>, <span class="built_in">UIAlertControllerStyleAlert</span>, ^&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;, ^&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/07/asdasdasd/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹云霄">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Delevin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/12/07/asdasdasd/" class="post-title-link" itemprop="http://yoursite.com/index.html">iOS企业版App如何更新</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-07 15:40:44 / 修改时间：15:45:07" itemprop="dateCreated datePublished" datetime="2018-12-07T15:40:44+08:00">2018-12-07</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>iOS企业版本更新很方便，一般的套路是服务端提供一个接口，App再启动时判断是否有新版本发布，通过获取的URL下载路径更新。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">1、把打包生成的ipa包和plist文件都放到支持HTTPS的服务器上，比如七牛等。如果没有plist文件的话，可以使用下文格式，把标注位置更换就可以直接使用。</span><br><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">key</span>&gt;</span>items<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">key</span>&gt;</span>assets<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">key</span>&gt;</span>kind<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">string</span>&gt;</span>software-package<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">key</span>&gt;</span>url<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">string</span>&gt;</span>//ipa 下载路径<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">key</span>&gt;</span>metadata<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">key</span>&gt;</span>bundle-identifier<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">string</span>&gt;</span>// bundle identifier <span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">key</span>&gt;</span>bundle-version<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">string</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">key</span>&gt;</span>kind<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">string</span>&gt;</span>software<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">key</span>&gt;</span>title<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">string</span>&gt;</span>// 标题<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>、<span class="string">[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-services://?action=download-manifest&amp;url= // plist文件下载路径 "]]</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/07/测试/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹云霄">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Delevin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/12/07/测试/" class="post-title-link" itemprop="http://yoursite.com/index.html">iOS 适配 iPhoneXS Max，iPhoneXS，iPhoneXR</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-07 12:09:05 / 修改时间：15:49:09" itemprop="dateCreated datePublished" datetime="2018-12-07T12:09:05+08:00">2018-12-07</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里有个坑，如果如果直接通过安全区域判断的话,在iOS12的非刘海屏设备，top都等于20。</span></span><br><span class="line"><span class="built_in">if</span> (@<span class="built_in">available</span>(iOS <span class="number">11.0</span>, *)) &#123;</span><br><span class="line">    UIEdgeInsets safeArea = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//所以采用另一种思路</span></span><br><span class="line"><span class="built_in">if</span> ([[UIApplication sharedApplication] statusBarFrame].<span class="built_in">size</span>.<span class="built_in">height</span> == <span class="number">44</span>) &#123; </span><br><span class="line">   <span class="comment">//iPhoneXS Max，iPhoneXS，iPhoneXR, iPhoneX</span></span><br><span class="line">   <span class="comment">//这样就都搞定啦</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -466,8 +938,8 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
@@ -521,7 +993,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -529,7 +1001,7 @@
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.6.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
 
 
 
